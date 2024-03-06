@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light Studio</title>
+    <link rel="stylesheet" href="scr.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+   
+</head>
+
+<body>
+    
+    
+        <div class="topnav">
+
+            <img src="logo.png" class="logo" alt="">
+            <a  href="scri.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="login.html">Login</a>
+            <input type="text" id="numberInput" placeholder="Price search..">
+            <button id="button" onclick="searchNumber()">Search</button>
+
+          </div> 
+        
+          
+    
+    <div class="container">
+        <nav>
+           
+            <div class="items"> <!--filter-buttons-->
+                <button class="item" onclick="filterSelection('all')">All</button>
+                <button class="item" onclick="filterSelection('phones')">Phones</button>
+                <button class="item" onclick="filterSelection('clothes')">Clothes</button>
+                <button class="item" onclick="filterSelection('shoes')">Shoes</button>
+                <button class="item" onclick="filterSelection('watches')">Watches</button>
+
+              </div>
+        </nav>
+        <div class="gallery">
+            <div class="gallery-item shoes"><span><a href="extension3.html"><img src="shoes2.jpg"></a></span></div>
+            <div class="gallery-item clothes"><span><a href="extension1.html"><img src="clothes1.jpg"></a></span></div>
+            <div class="gallery-item phones"><span><a href="extension4.html"><img src="phone.jpg"></a></span></div>
+            <div class="gallery-item shoes"><span><a href="extension5.html"><img src="shoes1.webp"></a></span></div>
+            <div class="gallery-item watches"><span><a href="extension6.html"><img src="watches4.jpg"></a></span></div>
+            <div class="gallery-item watches"><span><a href="extension7.html"><img src="wat.jpg"></a></span></div>
+            <div class="gallery-item phones"><span><a href="extension8.html"><img src="phon.jpg"></a></span></div>
+            <div class="gallery-item clothes"><span><a href="extension2.html"><img src="clothes3.webp"></a></span></div>
+            <div class="gallery-item phones"><span><a href="extension9.html"><img src="phone2.webp"></a></span></div>
+            <div class="gallery-item clothes"><span><a href="extension10.html"><img src="clothes4.webp"></a></span></div>
+            <div class="gallery-item shoes"><span><a href="extension11.html"><img src="shoes3.jpg"></a></span></div>
+            <div class="gallery-item clothes"><span><a href="extension12.html"><img src="clothes2.jpg"></a></span></div>
+
+           
+        </div>
+    </div>
+
+    <footer>
+      <h5>For more</h5>
+      <div class="wrapper">
+         <div class="icon facebook">
+            <div class="tooltip">
+               Facebook
+            </div>
+            <span><a href="https://www.facebook.com/" target="_blank"><i style="color: black;" class="fab fa-facebook-f"></i></a></span>
+         </div>
+         <div class="icon twitter">
+            <div class="tooltip">
+               Twitter
+            </div>
+            <span><a href="https://twitter.com/" target="_blank"><i style="color: black;" class="fab fa-twitter"></i></a></span>
+         </div>
+         <div class="icon instagram">
+            <div class="tooltip">
+               Instagram
+            </div>
+            <span><a href="https://www.instagram.com/" target="_blank"><i style="color: black;" class="fab fa-instagram"></i></a></span>
+         </div>
+         <div class="icon github">
+            <div class="tooltip">
+               Github
+            </div>
+            <span><a href="https://github.com/" target="_blank"><i style="color: black;" class="fab fa-github"></i></a></span>
+         </div>
+         <div class="icon youtube">
+            <div class="tooltip">
+               YouTube
+            </div>
+            <span><a href="https://www.youtube.com/" target="_blank" ><i style="color: black;" class="fab fa-youtube"></i></a></span>
+         </div>
+      </div>
+   </footer>
+</body>
+
+</html>
+    <script>
+    
+            function filterSelection(category) {
+              var items = document.querySelectorAll('.gallery-item');
+          
+              items.forEach(function(item) {
+                if (category === 'all' || item.classList.contains(category)) {
+                  item.style.display = 'block';
+                } else {
+                  item.style.display = 'none';
+                }
+              });
+            }
+
+            function searchNumber() {
+              var number = document.getElementById("numberInput").value;
+              
+              if(number<1000){
+                window.location.href="noresult.html";
+                 
+              } 
+              else if(number<=10000){
+                window.location.href = "result1.html";
+              }
+              else if (number<=25000){
+                  window.location.href = "result25.html";
+              }
+              else if (number<70000){
+                  window.location.href = "result50.html";
+              }
+              
+              else if (number>=70000){
+                  window.location.href = "result100.html";
+              }
+              else {
+                window.location.href = "noresult.html";
+              }
+          }
+          
+    </script>
+    
+    

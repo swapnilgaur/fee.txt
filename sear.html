@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Search</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Number Search</h2>
+    <input type="text" id="numberInput" placeholder="Enter a number">
+    <button onclick="searchNumber()">Search</button>
+
+    <script>
+        function searchNumber() {
+            var number = document.getElementById("numberInput").value;
+            
+            if(number<10000){
+                
+                window.location.href = "result.html";
+            } 
+            else if (number<=25000){
+                window.location.href = "result25.html";
+            }
+            else if (number<50000){
+                window.location.href = "result25.html";
+            }
+            
+            else if (number>=50000){
+                window.location.href = "result50.html";
+            }
+            else {
+                alert("Please enter a valid number");
+            }
+        }
+    </script>
+</body>
+</html>

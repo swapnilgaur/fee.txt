@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      width: 200px;
+      height: 200px;
+      margin: 10px;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .filter-buttons {
+      text-align: center;
+      margin: 20px;
+    }
+
+    .filter-buttons button {
+      margin: 5px;
+      padding: 8px 15px;
+      font-size: 14px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #3498db;
+      color: #fff;
+      transition: background-color 0.3s ease;
+    }
+
+    .filter-buttons button:hover {
+      background-color: #2980b9;
+    }
+  </style>
+</head>
+<body>
+
+<div class="filter-buttons">
+  <button onclick="filterSelection('all')">All</button>
+  <button onclick="filterSelection('nature')">Nature</button>
+  <button onclick="filterSelection('city')">City</button>
+  <button onclick="filterSelection('animals')">Animals</button>
+</div>
+
+<div class="gallery">
+  <div class="gallery-item nature">
+    <img src="nature1.jpg" alt="Nature 1">
+  </div>
+  <div class="gallery-item city">
+    <img src="city1.jpg" alt="City 1">
+  </div>
+  <div class="gallery-item animals">
+    <img src="animal1.jpg" alt="Animal 1">
+  </div>
+  <!-- Add more items as needed with appropriate class names -->
+
+</div>
+
+<script>
+  function filterSelection(category) {
+    var items = document.querySelectorAll('.gallery-item');
+
+    items.forEach(function(item) {
+      if (category === 'all' || item.classList.contains(category)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+
+    
